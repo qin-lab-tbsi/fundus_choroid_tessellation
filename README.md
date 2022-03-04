@@ -39,7 +39,7 @@ from tessellator import choroid_segment
 ## i. load a fundus RGB image 
 fundus = choroid_segment.FundusImage( path_to_image )
 ## ii. get choroid segmentaiton results 
-binary_step_img, final_output_img = fundus.choroid_tessellation() 
+binary_step_img, final_output_img = fundus.choroid_tessellation
 ## or visualize results 
 fundus.show_segmentation() 
 ## or save results to file 
