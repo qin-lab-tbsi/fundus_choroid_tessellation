@@ -139,7 +139,7 @@ class FundusImage:
         return self.seg_resultz
     
     def save_segmentations(self):
-        rez = self.choroid_tessellation()  
+        rez = self.choroid_tessellation   
         for t, im in zip( self.output_titlez, rez ):
             IM.save_image( self.output_dir/ t / f"{self.fname}.png" , im )  
             
@@ -150,7 +150,7 @@ class FundusImage:
         _, axz = plt.subplots( nr, nc, figsize=(4*nr, 4*nc))  
         axz = axz.flatten() 
         im = self.imdata 
-        coo, cim = self.choroid_tessellation() 
+        coo, cim = self.choroid_tessellation 
         for j, aim in enumerate([im, coo, cim]): 
             ax = axz[j] 
             ax.imshow( aim , cmap='gray') 
