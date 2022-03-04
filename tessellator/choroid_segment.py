@@ -11,6 +11,7 @@ from tessellator import imutils as IM
 from skimage import img_as_ubyte 
 import skimage.feature as skfeats  #hessian,  
 import matplotlib.pyplot as plt 
+from datetime import datetime 
 
 def log_info(msg):        
     pass 
@@ -105,7 +106,7 @@ class FundusImage:
                  tess_method=None):
         mz = list(_TESSELLATORZ_REGISTRY.keys())
         assert tess_method in [None,]+mz, \
-                    f"Tessellation methods = {mz} "
+                    f"Your input: {tess_method}. Valid tessellation methods = {mz} "
         self.tess_method = "Tessellator" if tess_method is None else tess_method 
         self.imdata, self.fname = (fdata, self.gen_name() ) if isinstance(fdata, (np.ndarray,) ) \
                                     else (IM.load_image(fdata,resize=img_resize) ,Path(fdata).stem )        
@@ -115,7 +116,8 @@ class FundusImage:
         self.out_dir = None 
         
     def gen_name(self):
-        return "xcvd"
+        t = datetime.now() 
+        return f"xcvd_{t}"
     
     @property 
     def output_dir(self):
