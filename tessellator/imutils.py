@@ -74,8 +74,7 @@ def preclean_image(im, dehaze=True, blur=False):
 #         for j, aim in enumerate([im, cim]):
 #             ax = axz[(i*nc)+j] 
 #             ax.imshow( aim ) 
-#             ax.axis('off')
-            
+#             ax.axis('off')            
 #     plt.tight_layout()
 #     plt.show()
     
