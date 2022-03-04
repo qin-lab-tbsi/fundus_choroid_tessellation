@@ -128,6 +128,7 @@ class FundusImage:
             self.out_dir = o 
         return self.out_dir 
     
+    @property 
     def choroid_tessellation(self):
         if self.seg_resultz is None:
             tess_method = "Tessellator" if self.tess_method is None else self.tess_method 
