@@ -112,8 +112,8 @@ class FundusImage:
                                     else (IM.load_image(fdata,resize=img_resize) ,Path(fdata).stem )        
         self.with_dehazing = with_dehazing 
         
-        self.seg_resultz = None 
-        self.out_dir = None 
+        self._seg_resultz = None 
+        self._out_dir = None 
         
     def gen_name(self):
         t = datetime.now() 
@@ -121,22 +121,22 @@ class FundusImage:
     
     @property 
     def output_dir(self):
-        if self.out_dir is None: 
+        if self._out_dir is None: 
             o = Path(__file__).parent.resolve() / "../tessallation_output" / self.tess_method
             for so in self.output_titlez:  
                 (o/so).mkdir( parents=True, exist_ok=True) 
-            self.out_dir = o 
-        return self.out_dir 
+            self._out_dir = o 
+        return self._out_dir 
     
     @property 
     def choroid_tessellation(self):
-        if self.seg_resultz is None:
+        if self._seg_resultz is None:
             tess_method = "Tessellator" if self.tess_method is None else self.tess_method 
             method_kwargz = dict(
                 with_dehazing=self.with_dehazing  
                 )
-            self.seg_resultz = segment_choroid_tubulars( self.imdata, tess_method, method_kwargz ) 
-        return self.seg_resultz
+            self._seg_resultz = segment_choroid_tubulars( self.imdata, tess_method, method_kwargz ) 
+        return self._seg_resultz
     
     def save_segmentations(self):
         rez = self.choroid_tessellation   
