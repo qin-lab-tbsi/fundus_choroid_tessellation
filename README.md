@@ -2,7 +2,13 @@
 
 ![example results](example_outz.png)
 
-## Prior Works and Related links 
+
+## How it works
+
+![flow chart](choroid_method.png)
+
+
+## Related works
 - [Choroid thickness estimation paper with intensity thresholding approach](https://www.nature.com/articles/s41598-020-62347-7)
 
 
