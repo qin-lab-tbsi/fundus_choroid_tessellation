@@ -25,6 +25,7 @@ def register_tessellator(f):
 
 @register_tessellator 
 class Tessellator:
+    ''' '''
     brightz = lambda x, t: img_as_ubyte( ( (x-x.min())/(x.max()-x.min() + 1e-16) ) >= t ) 
     def __call__(self, img, *argz, **kwargz):
         with_dehazing = kwargz.get('with_dehazing', True ) 
@@ -66,7 +67,8 @@ class Tessellator:
         return crt 
         
 @register_tessellator 
-class HessianTessellator(Tessellator):      
+class HessianTessellator(Tessellator):
+    ''' Alternate choroid segmentation method'''      
     def __init__(self, sigmaz=(.1,7.7,.5), h_thresh=0.0099): #(3.3,4.7,.5)
         super().__init__()
         self.sigmaz = sigmaz   
@@ -97,9 +99,8 @@ def segment_choroid_tubulars(img, method, method_kwargz=None):
 
 
 class FundusImage:
-    
-    output_titlez = ['binary', 'output']
-    
+    ''' '''    
+    output_titlez = ['binary', 'output']    
     def __init__(self, fdata, 
                  img_resize=None,
                  with_dehazing=True, 

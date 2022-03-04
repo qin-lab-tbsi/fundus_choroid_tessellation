@@ -29,6 +29,7 @@ Here's a quick way to get started with it.
 ```bash
 ### ===== 1. batch operation =====
 ## i. see config.py for settings 
+input_dir = data
 ## ii. run python on run.py 
 python run.py 
 ```
