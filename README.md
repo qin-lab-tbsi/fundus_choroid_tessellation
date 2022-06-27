@@ -46,6 +46,8 @@ fundus.show_segmentation()
 fundus.save_segmentations() 
 ```
 
+## Cite
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
