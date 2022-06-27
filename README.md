@@ -23,7 +23,6 @@ python setup.py
 ```
 
 **2. Use it**
-The project does XYZ.
 Here's a quick way to get started with it. 
 
 ```bash
